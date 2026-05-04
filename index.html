@@ -1,0 +1,127 @@
+
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USD to COP | Jampier</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/convertidor USD a COP.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      
+      <div class="header">
+        <h1><i class="fas fa-chart-line"></i> USD → COP Colombia</h1>
+        <p>TRM Oficial - Banco de la República</p>
+        <div class="badge">
+          <i class="fas fa-check-circle"></i> Fuente Oficial
+        </div>
+      </div>
+      
+      <div class="content">
+        <div class="input-group">
+          <label><i class="fas fa-dollar-sign"></i> Dólares Americanos (USD)</label>
+          <div class="input-wrapper">
+            <span class="currency-symbol">$</span>
+            <input type="number" id="usd" placeholder="0.00" step="any" />
+          </div>
+        </div>
+        
+        <div class="exchange-icon">
+          <div class="icon-bg">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+        </div>
+        
+        <div class="input-group">
+          <label><i class="fas fa-coins"></i> Pesos Colombianos (COP)</label>
+          <div class="input-wrapper">
+            <span class="currency-symbol">$</span>
+            <input type="text" id="cop" placeholder="0.00" readonly />
+          </div>
+        </div>
+        
+        <div class="result-container" id="resultContainer">
+          <div class="result-label">Resultado de Conversión</div>
+          <div class="result-value" id="resultValue">—</div>
+        </div>
+        
+        <div class="info-bar">
+          <div class="info-card">
+            <div class="info-label">TRM OFICIAL</div>
+            <div class="info-value" id="currentRate">Cargando...</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">ÚLTIMA ACTUALIZACIÓN</div>
+            <div class="info-value" id="lastUpdate">—</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">PRÓXIMA ACTUALIZACIÓN</div>
+            <div class="info-value" id="nextUpdate">—</div>
+          </div>
+        </div>
+        
+        <div class="auto-update-status">
+          <i class="fas fa-sync-alt fa-spin"></i>
+          <span>Actualización automática cada 5 minutos</span>
+        </div>
+        
+        <div class="buttons">
+          <button class="btn btn-primary" id="convertBtn">
+            <i class="fas fa-calculator"></i> Convertir
+          </button>
+          <button class="btn btn-secondary" id="historyBtn">
+            <i class="fas fa-history"></i> Historial
+          </button>
+          <button class="btn btn-secondary" id="refreshRateBtn">
+            <i class="fas fa-sync-alt"></i> Actualizar Ahora
+          </button>
+        </div>
+        
+        <div class="loader-overlay" id="loaderOverlay">
+          <div class="loader-spinner">
+            <div class="spinner"></div>
+            <p>Actualizando TRM oficial...</p>
+          </div>
+        </div>
+      </div>
+      <img src="img/My-Firma.png" alt="Firma" style="width: 100px; height: auto; display: block; margin: 0 auto;">
+    </div>
+     
+  </div>
+  
+  <!-- Modal de Historial -->
+  <div class="modal" id="historyModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-history"></i> Historial de Conversiones</h2>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="historyList"></div>
+        <button class="btn btn-secondary" id="clearHistory" style="width: 100%; margin-top: 20px;">
+          <i class="fas fa-trash-alt"></i> Limpiar Historial
+        </button>
+      </div>
+      
+    </div>
+
+   
+  </div>
+  
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i id="toastIcon" class="fas fa-check-circle"></i>
+    <span id="toastMessage"></span>
+  </div>
+  
+  <script src="js/convertidor USD a COP.js"></script>
+</body>
+</html>
